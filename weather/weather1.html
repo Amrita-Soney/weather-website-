@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather Report</title>
+    <link rel="icon" type="image/x-icon" href="favion.jpeg" style="border-radius: 50%;">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <script src="./apikey.js" defer></script>
+</head>
+
+<body>
+    <div class="container">
+        <header class="header">
+            <h1>Weather</h1>
+
+            <div class="social">
+                <div class="topnav">
+
+                    <div class="search-container">
+
+                        <input type="text" class="search-bar" placeholder="Search Your Location" name="search">
+                        <button type="submit"><i class="fa fa-search"></i></button>
+                    </div>
+                </div>
+                <a href="#"><i class="fab fa-facebook"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+            </div>
+
+        </header>
+        <aside class="left">
+            <img src="logo.jpg" width="180px" />
+            <ul>
+                <li><a class="active" href="#home">Home</a></li>
+                <li><a href="#weather">Weather</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <li><a href="#about">About</a></li>
+            </ul>
+            <br><br>
+            <p>"For each point on the globe, we provide historical, current and forecasted weather data via light-speed
+                APIs."</p>
+        </aside>
+        <main class="content">
+            <div class="report">
+                <img src="b.jpg" width="100%" height="300px" style="float:left; position: relative;">
+
+                <div class="weather" onmouseover="callme(this)" onmouseleave="revert(this)">
+                    <h2 class="city">Weather in New Delhi</h2>
+                    <h1 class="temp" style="font-size: 50px;">&#9729;23&#xb0;</h1>
+                    <h1 class="description" style="font-size: 30px;"></h1>
+                    <h1 class="humidity" style="font-size: 30px;"></h1>
+                    <h1 class="wind" style="font-size: 30px;"></h1>
+                    <script>
+                        function callme(obj) {
+                            obj.style.opacity = "0.5";
+                        }
+                        function revert(obj) {
+                            obj.style.opacity = "1";
+                        }
+                    </script>
+
+
+
+                </div>
+
+            </div>
+            <hr><br>
+            <h2>&#9925; Weekly Forecast </h2>
+            <!-- <table>
+                <tr>
+                    <th>MON</th>
+                    <th>TUE</th>
+                    <th>WED</th>
+                    <th>THU</th>
+                    <th>FRI</th>
+                    <th>SAT</th>
+                    <th>SUN</th>
+                </tr>
+                <tr>
+                    <td><span style='font-size:20px;'>&#9728;</span></td>
+                    <td><span style='font-size:20px;'>&#9729;</span></td>
+                    <td><span style='font-size:20px;'>&#9928;</span></td>
+                    <td><span style='font-size:20px;'>&#9730;</span></td>
+                    <td><span style='font-size:20px;'>&#9729;</span></td>
+                    <td><span style='font-size:20px;'>&#9728;</span></td>
+                    <td><span style='font-size:20px;'>&#9728;</span></td>
+
+                </tr>
+                <tr>
+                    <td>24&#xb0;</td>
+                    <td>23&#xb0;</td>
+                    <td>20&#xb0;</td>
+                    <td>18&#xb0;</td>
+                    <td>20&#xb0;</td>
+                    <td>22&#xb0;</td>
+                    <td>24&#xb0;</td>
+
+                </tr>   <tr>
+            </table> -->
+            <div class="future-forecast">
+                <div class="today" id="current-temp">
+
+                    <div class="other">
+                        <div class="day">Monday</div>
+                        <div class="temp">Night - 25.6&#176; C</div>
+                        <div class="temp">Day - 35.6&#176; C</div>
+                    </div>
+                </div>
+
+                <div class="weather-forecast" id="weather-forecast">
+                    <div class="weather-forecast-item">
+                        <div class="day">Tue</div>
+
+                        <div class="temp">Night - 25.6&#176; C</div>
+                        <div class="temp">Day - 35.6&#176; C</div>
+                    </div>
+                    <div class="weather-forecast-item">
+                        <div class="day">Wed</div>
+
+                        <div class="temp">Night - 25.6&#176; C</div>
+                        <div class="temp">Day - 35.6&#176; C</div>
+                    </div>
+                    <div class="weather-forecast-item">
+                        <div class="day">Thur</div>
+
+                        <div class="temp">Night - 25.6&#176; C</div>
+                        <div class="temp">Day - 35.6&#176; C</div>
+                    </div>
+                    <div class="weather-forecast-item">
+                        <div class="day">Fri</div>
+
+                        <div class="temp">Night - 25.6&#176; C</div>
+                        <div class="temp">Day - 35.6&#176; C</div>
+                    </div>
+                    <div class="weather-forecast-item">
+                        <div class="day">Sat</div>
+
+                        <div class="temp">Night - 25.6&#176; C</div>
+                        <div class="temp">Day - 35.6&#176; C</div>
+                    </div>
+
+                </div>
+            </div>
+
+
+
+            <div class="raintext">
+                <img src="rainy-day-pictures-gallery-47.jpg" width="100%" height="300px" alt="oops!">
+                <div class="text-block" style="opacity: 0.6;">
+                    <h4>Know More About How Global Warming Is Affecting Us!</h4>
+                    <a href="https://timesofindia.indiatimes.com/topic/upcoming-monsoon" target="_blank"
+                        style="color: #cdd3ea; text-decoration-line: none;  ">Upcoming Monsoon</a>
+                </div>
+            </div>
+
+        </main>
+        <footer class="footer">© Copyright.AmritaSoney </footer>
+    </div>
+
+
+
+</body>
+
+</html>
